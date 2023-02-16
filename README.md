@@ -17,3 +17,15 @@ These above policies are implemented in both the Python script and JS.
 
 PYTHON SCRIPT
 This python script requires the common.txt to be in the same directory in order to implement the 'uniqueness' policy. Ensure to download the common.txt file too into the same directory.
+
+
+EXPLAINATION
+Regular Expression (Regex) defines search patterns that use special key characters for parsing and matching and usually describe the allowable input variant for an input field. This is what is most likely used on most websites when you are trying to make a password. It looks something like this:
+^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
+Now that may look like a complete mess, but each part accounts for a specific policy, ultimately creating a big piece of organised chaos. Each piece is as follows:
+
+1. Contains at least one lowercase letter (?=.*[a-z])
+2. Contains at least one uppercase letter (?=.*[A-Z])
+3. Contains at least one digit (?=.*\d)
+4. Contains at least one special character (?=.*[@$!%*?&])
+5. Has a length of at least 8 characters [A-Za-z\d@$!%*?&]{8,}$
